@@ -80,6 +80,7 @@ class Mamba(nn.Module):
             class MambaLMHeadModel, https://github.com/state-spaces/mamba/blob/main/mamba_ssm/models/mixer_seq_simple.py#L173
 
         """
+        input_ids = input_ids.long() # dtype long is required.
         x = self.embedding(input_ids)
         
         for layer in self.layers:
